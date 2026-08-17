@@ -18,6 +18,7 @@ def log_parser(file_name: str):
             elif 'ERROR' == parts[2]:
                 error += 1
                 errors_in_file.append(line)
+                unique_errors_in_file.add(' '.join(parts[3:]))
     print('INFO    :', info)
     print('WARNING :', warning)
     print('ERROR   :', error)
@@ -28,4 +29,5 @@ def log_parser(file_name: str):
         print("The first Error in log is        :",errors_in_file[0])
     else:
         print("No Error in log")
+    print ("These are unique errors in file     :",unique_errors_in_file)
 log_parser("application.log")
